@@ -9,6 +9,8 @@ TEST_PATH  = os.path.join(DATA_DIR , "test")
 VAL_PATH   = os.path.join(DATA_DIR , "val")
 
 
+EPOCHS = 20
+LR = 0.001
 BATCH_SIZE = 32
 SEED = 42
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
