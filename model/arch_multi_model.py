@@ -62,13 +62,10 @@ def create_model(arch: Arch, num_classes=2, pretrained=True, freeze_backbone=Fal
 
     if num_classes == 2:
         new_head = nn.Sequential(
-            nn.Linear(num_ftrs, 512),
+            nn.Linear(num_ftrs, 256),
             nn.ReLU(),
             nn.Dropout(0.3),
-            nn.Linear(512, 256),
-            nn.ReLU(),
-            nn.Dropout(0.2),
-            nn.Linear(256, 1)
+            nn.Linear(256, 1),
         )
     else:
         new_head = nn.Sequential(
