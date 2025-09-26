@@ -19,7 +19,7 @@ class Arch(Enum):
     SHUFFLENET_V2_X0_5 = "shufflenet_v2_x0_5"
     MNASNET_1_0 = "mnasnet_1_0"
 
-EPOCHS = 1
+EPOCHS = 25
 LR = 0.001
 BATCH_SIZE = 32
 SEED = 42
