@@ -2,7 +2,6 @@ import os
 import matplotlib.pyplot as plt
 from PIL import Image
 import numpy as np
-from config import DATA_DIR
 
 def _plot_counts(counts_dict, title="Class Distribution", save_path=None, show=False):
     """
@@ -163,6 +162,3 @@ def get_image_size_stats(data_dir, printing=True):
 
     print("Görsel boyut istatistikleri özet:", stats) if printing else None
     return stats
-
-get_image_size_stats(DATA_DIR, printing=True)
-get_class_counts_inform(data_dir=DATA_DIR,printing=True,graph=False,download=True,out_dir="../charts")

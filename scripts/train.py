@@ -4,19 +4,20 @@ import torch.optim as optim
 import model.resnet_model as resnet
 from config import LR, EPOCHS, DEVICE
 from tqdm import tqdm
-import torch.multiprocessing as mp
 from scripts.evaluate import evaluate
-from utils.dataloader import return_data
 
 
 
-def train_model():
+def train_model(train_loader,val_loader):
     model = resnet.create_model(num_classes=2, pretrained=True, freeze_backbone=False)
     criterion = nn.BCEWithLogitsLoss()  # Binary
     optimizer = optim.Adam(model.parameters(), lr=LR)
 
-    train_loader, _, val_loader = return_data()
-
+    history = {
+        "train_loss": [],
+        "val_loss": [],
+        "val_acc": []
+    }
     for epoch in range(EPOCHS):
         model.train()
         running_loss = 0.0
@@ -41,14 +42,14 @@ def train_model():
         # validation (evaluate imzan device bekliyorsa DEVICE ver)
         val_loss, val_acc = evaluate(model, val_loader, criterion, DEVICE)
 
+        history["train_loss"].append(avg_loss)
+        history["val_loss"].append(val_loss)
+        history["val_acc"].append(val_acc)
+
         print(
             f"Epoch {epoch + 1}/{EPOCHS}, "
             f"Train Loss: {avg_loss:.4f}, "
             f"Val Loss: {val_loss:.4f}, "
             f"Val Acc: {val_acc * 100:.2f}%"
         )
-
-
-if __name__ == "__main__":
-    mp.freeze_support()  # Windows  multiproc için lazım
-    train_model()
+    return model, history
