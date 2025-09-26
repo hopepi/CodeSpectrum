@@ -1,15 +1,17 @@
 import torch
 import torch.nn as nn
 import torch.optim as optim
-import model.resnet_model as resnet
-from config import LR, EPOCHS, DEVICE
+import model.legacy_resnet_model as resnet # legacy
+from config import LR, EPOCHS, DEVICE, Arch
 from tqdm import tqdm
+from model.arch_multi_model import create_model
 from scripts.evaluate import evaluate
 
 
 
-def train_model(train_loader,val_loader):
-    model = resnet.create_model(num_classes=2, pretrained=True, freeze_backbone=False)
+def train_model(train_loader, val_loader, arch: Arch, pretrained=True, freeze_backbone=False):
+    model = create_model(arch=arch, num_classes=2, pretrained=pretrained, freeze_backbone=freeze_backbone)
+
     criterion = nn.BCEWithLogitsLoss()  # Binary
     optimizer = optim.Adam(model.parameters(), lr=LR)
 
