@@ -17,5 +17,5 @@ def test_model(model, test_loader, device, threshold=0.5):
         correct += (preds == labels).sum().item()
 
     acc = 100.0 * correct / max(total, 1)
-    print(f"[TEST] Accuracy: {acc:.2f}%")
+    print(f"Accuracy: {acc:.2f}%")
     return acc
