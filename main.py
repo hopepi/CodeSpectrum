@@ -12,7 +12,7 @@ from utils.data_inspector import get_image_size_stats, get_class_counts_inform
 
 
 def main():
-    select_model = Arch.MNASNET_1_0
+    select_model = Arch.EFFICIENTNET_B0
     run_id = datetime.now().strftime("%Y%m%d_%H%M%S")
     out_dir = os.path.join("charts", select_model.value, run_id)
     os.makedirs(out_dir, exist_ok=True)
