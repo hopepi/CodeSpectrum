@@ -26,20 +26,20 @@ A few random samples from the dataset:
 
 ### Train Dataset
 <p align="center">
-  <img src="charts/resnet18/20250926_234348/train_random.png" alt="Train Random" width="400" height="200"/>
-  <img src="charts/resnet18/20250926_234348/train_counts.png" alt="Train Counts" width="400" height="200"/>
+  <img src="charts/resnet18/20250926_234348/train_random.png" alt="Train Random" width="400" height="300"/>
+  <img src="charts/resnet18/20250926_234348/train_counts.png" alt="Train Counts" width="400" height="300"/>
 </p>
 
 ### Test Dataset
 <p align="center">
-  <img src="charts/resnet18/20250926_234348/test_random.png" alt="Test Random" width="400" height="200"/>
-  <img src="charts/resnet18/20250926_234348/test_counts.png" alt="Test Counts" width="400" height="200"/>
+  <img src="charts/resnet18/20250926_234348/test_random.png" alt="Test Random" width="400" height="300"/>
+  <img src="charts/resnet18/20250926_234348/test_counts.png" alt="Test Counts" width="400" height="300"/>
 </p>
 
 ### Validation Dataset
 <p align="center">
-  <img src="charts/resnet18/20250926_234348/val_random.png" alt="Val Random" width="400" height="200"/>
-  <img src="charts/resnet18/20250926_234348/val_counts.png" alt="Val Counts" width="400" height="200"/>
+  <img src="charts/resnet18/20250926_234348/val_random.png" alt="Val Random" width="400" height="300"/>
+  <img src="charts/resnet18/20250926_234348/val_counts.png" alt="Val Counts" width="400" height="300"/>
 </p>
 
 ## Project Structure
